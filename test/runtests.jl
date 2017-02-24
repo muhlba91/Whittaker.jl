@@ -1,6 +1,6 @@
 module WhittakerTests
 
-using Whittaker
+using FactCheck, Whittaker
 
 include("whittaker1.jl")
 include("whittaker2.jl")
