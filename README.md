@@ -20,7 +20,7 @@ Pkg.add("Whittaker")
 
 ## Example
 
-To interpolate a missing value uisng first-order differences, the following code can be used:
+To interpolate a missing value using first-order differences, the following code can be used:
 ```Julia
 using Whittaker
 
