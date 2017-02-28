@@ -5,6 +5,9 @@ This package provides implementations for first- and second-order differences Wh
 
 ## Project Status
 
+[![Whittaker](http://pkg.julialang.org/badges/Whittaker_0.5.svg)](http://pkg.julialang.org/?pkg=Whittaker)
+[![Whittaker](http://pkg.julialang.org/badges/Whittaker_0.6.svg)](http://pkg.julialang.org/?pkg=Whittaker)
+
 [![Build Status](https://travis-ci.org/muhlba91/Whittaker.jl.svg?branch=master)](https://travis-ci.org/muhlba91/Whittaker.jl)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/muhlba91/Whittaker.jl?branch=master&svg=true)](https://ci.appveyor.com/project/muhlba91/whittaker-jl/branch/master)
 [![Coverage Status](https://coveralls.io/repos/muhlba91/Whittaker.jl/badge.svg?branch=master)](https://coveralls.io/r/muhlba91/Whittaker.jl?branch=master)
