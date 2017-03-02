@@ -1,0 +1,69 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Whittaker.jl\n\n\nThis package provides implementations for first- and second-order differences Whittaker-Henderson smoothing and interpolation.\n\n\n\n\nInstallation\n\n\nTo install \nWhittaker.jl\n, start Julia and run:\n\n\nPkg\n.\nadd\n(\nWhittaker\n)\n\n\n\n\n\n\n\n\nExamples\n\n\n\n\nFirst-order differences\n\n\n\n\n\n\nCredits\n\n\nThe code is based on \n'Smoothing and interpolation with finite differences'\n [Eilers P. H. C, 1994].", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#whittakerjl", 
+            "text": "This package provides implementations for first- and second-order differences Whittaker-Henderson smoothing and interpolation.", 
+            "title": "Whittaker.jl"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "To install  Whittaker.jl , start Julia and run:  Pkg . add ( Whittaker )", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#examples", 
+            "text": "First-order differences", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/#credits", 
+            "text": "The code is based on  'Smoothing and interpolation with finite differences'  [Eilers P. H. C, 1994].", 
+            "title": "Credits"
+        }, 
+        {
+            "location": "/examples/whittaker1/", 
+            "text": "First-order differences\n\n\nTo interpolate a missing value using first-order differences, the following code can be used:\n\n\nusing\n \nWhittaker\n\n\n\ny\n \n=\n \n[\n1.0\n,\n \n1.2\n,\n \n0\n,\n \n1.6\n,\n \n1.8\n]\n\n\nw\n \n=\n \n[\n1.0\n,\n \n1.2\n,\n \n0\n,\n \n1.6\n,\n \n1.8\n]\n\n\nlambda\n \n=\n \n0.0001\n\n\nz\n \n=\n \nwhittaker1\n(\ny\n,\n \nw\n,\n \nlambda\n)\n\n\n\n# z = [1.00002, 1.2, 1.4, 1.6, 1.79998]\n\n\n\n\n\n\nNote\n You can use \nwhittaker1!\n to smooth and interpolate in-place.", 
+            "title": "First-order differences"
+        }, 
+        {
+            "location": "/examples/whittaker1/#first-order-differences", 
+            "text": "To interpolate a missing value using first-order differences, the following code can be used:  using   Whittaker  y   =   [ 1.0 ,   1.2 ,   0 ,   1.6 ,   1.8 ]  w   =   [ 1.0 ,   1.2 ,   0 ,   1.6 ,   1.8 ]  lambda   =   0.0001  z   =   whittaker1 ( y ,   w ,   lambda )  # z = [1.00002, 1.2, 1.4, 1.6, 1.79998]   Note  You can use  whittaker1!  to smooth and interpolate in-place.", 
+            "title": "First-order differences"
+        }, 
+        {
+            "location": "/examples/whittaker2/", 
+            "text": "Second-order differences\n\n\nTo interpolate a missing value using second-order differences, the following code can be used:\n\n\nusing\n \nWhittaker\n\n\n\ny\n \n=\n \n[\n1.0\n,\n \n1.2\n,\n \n0\n,\n \n1.6\n,\n \n1.8\n]\n\n\nw\n \n=\n \n[\n1.0\n,\n \n1.2\n,\n \n0\n,\n \n1.6\n,\n \n1.8\n]\n\n\nlambda\n \n=\n \n0.0001\n\n\nz\n \n=\n \nwhittaker2\n(\ny\n,\n \nw\n,\n \nlambda\n)\n\n\n\n# z = [0.999997, 1.20001, 1.4305, 1.64575, 1.80004]\n\n\n\n\n\n\nNote\n You can use \nwhittaker2!\n to smooth and interpolate in-place.", 
+            "title": "Second-order differences"
+        }, 
+        {
+            "location": "/examples/whittaker2/#second-order-differences", 
+            "text": "To interpolate a missing value using second-order differences, the following code can be used:  using   Whittaker  y   =   [ 1.0 ,   1.2 ,   0 ,   1.6 ,   1.8 ]  w   =   [ 1.0 ,   1.2 ,   0 ,   1.6 ,   1.8 ]  lambda   =   0.0001  z   =   whittaker2 ( y ,   w ,   lambda )  # z = [0.999997, 1.20001, 1.4305, 1.64575, 1.80004]   Note  You can use  whittaker2!  to smooth and interpolate in-place.", 
+            "title": "Second-order differences"
+        }, 
+        {
+            "location": "/function_reference/", 
+            "text": "Function Reference\n\n\n\n\nFirst-order  differences\n\n\nwhittaker1\n(\ninput\n::\nVector\n{\nFloat64\n},\n \nweights\n::\nVector\n{\nT\n \n:\n \nNumber\n},\n \nlambda\n::\nFloat64\n)\n \n-\n \nz\n::\nVector\n{\nFloat64\n}\n\n\nwhittaker1!\n(\ninput\n::\nVector\n{\nFloat64\n},\n \nweights\n::\nVector\n{\nT\n \n:\n \nNumber\n},\n \nlambda\n::\nFloat64\n)\n\n\n\n\n\n\n\n\nSecond-order  differences\n\n\nwhittaker2\n(\ninput\n::\nVector\n{\nFloat64\n},\n \nweights\n::\nVector\n{\nT\n \n:\n \nNumber\n},\n \nlambda\n::\nFloat64\n)\n \n-\n \nz\n::\nVector\n{\nFloat64\n}\n\n\nwhittaker2!\n(\ninput\n::\nVector\n{\nFloat64\n},\n \nweights\n::\nVector\n{\nT\n \n:\n \nNumber\n},\n \nlambda\n::\nFloat64\n)", 
+            "title": "Function Reference"
+        }, 
+        {
+            "location": "/function_reference/#function-reference", 
+            "text": "", 
+            "title": "Function Reference"
+        }, 
+        {
+            "location": "/function_reference/#first-order-differences", 
+            "text": "whittaker1 ( input :: Vector { Float64 },   weights :: Vector { T   :   Number },   lambda :: Float64 )   -   z :: Vector { Float64 }  whittaker1! ( input :: Vector { Float64 },   weights :: Vector { T   :   Number },   lambda :: Float64 )", 
+            "title": "First-order  differences"
+        }, 
+        {
+            "location": "/function_reference/#second-order-differences", 
+            "text": "whittaker2 ( input :: Vector { Float64 },   weights :: Vector { T   :   Number },   lambda :: Float64 )   -   z :: Vector { Float64 }  whittaker2! ( input :: Vector { Float64 },   weights :: Vector { T   :   Number },   lambda :: Float64 )", 
+            "title": "Second-order  differences"
+        }
+    ]
+}
