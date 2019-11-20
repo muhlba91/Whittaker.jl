@@ -1,0 +1,8 @@
+name = "Whittaker"
+uuid = "c614d7ff-2012-5f15-acdd-86d383a40c25"
+authors = ["muhlba91"]
+version = "1.0.2"
+
+[deps]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Whittaker = "1a9d218e-1d0c-5873-a711-86783b0883fb"

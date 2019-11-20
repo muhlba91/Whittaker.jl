@@ -6,7 +6,7 @@ Perform a first-order differences Whittaker-Henderson smoothing and interpolatio
 'Smoothing and interpolation with finite differences' [Eilers P. H. C, 1994]
 (URL: http://dl.acm.org/citation.cfm?id=180916)
 """
-function whittaker1{T <: Number}(y::Vector{Float64}, w::Vector{T}, lambda::Float64)
+function whittaker1(y::Vector{T}, w::Vector{U}, lambda::Number) where {T <: Number, U <: Number}
   z = similar(y)
   return smooth1!(y, w, lambda, z)
 end
@@ -20,7 +20,7 @@ Perform an in-place first-order differences Whittaker-Henderson smoothing and in
 'Smoothing and interpolation with finite differences' [Eilers P. H. C, 1994]
 (URL: http://dl.acm.org/citation.cfm?id=180916)
 """
-function whittaker1!{T <: Number}(y::Vector{Float64}, w::Vector{T}, lambda::Float64)
+function whittaker1!(y::Vector{T}, w::Vector{U}, lambda::Number) where {T <: Number, U <: Number}
   return smooth1!(y, w, lambda, y)
 end
 
@@ -30,11 +30,11 @@ end
 
 Smooth and interpolate with first-order differences.
 """
-function smooth1!{T <: Number}(y::Vector{Float64}, w::Vector{T}, lambda::Float64, z::Vector{Float64})
+function smooth1!(y::Vector{T}, w::Vector{U}, lambda::Number, z::Vector{V}) where {T <: Number, U <: Number, V <: Number}
   # init
   m = length(y)
-  c = Array{Float32}(m)
-  d = Array{Float32}(m)
+  c = Vector{Float32}(undef,m)
+  d = Vector{Float32}(undef,m)
   @inbounds @fastmath begin
     w0 = w[1]
     d1 = d[1] = w0 + lambda
