@@ -33,9 +33,9 @@ Smooth and interpolate with second-order differences.
 function smooth2!(y::Vector{T}, w::Vector{U}, lambda::Number, z::Vector{V}) where {T <: Number, U <: Number, V <: Number}
   # init
   m = length(y)
-  c = Array{Float32}(m)
-  d = Array{Float32}(m)
-  e = Array{Float32}(m)
+  c = Vector{Float32}(undef,m)
+  d = Vector{Float32}(undef,m)
+  e = Vector{Float32}(undef,m)
 
   @inbounds @fastmath begin
     # init (1)

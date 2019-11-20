@@ -33,8 +33,8 @@ Smooth and interpolate with first-order differences.
 function smooth1!(y::Vector{T}, w::Vector{U}, lambda::Number, z::Vector{V}) where {T <: Number, U <: Number, V <: Number}
   # init
   m = length(y)
-  c = Array{Float32}(m)
-  d = Array{Float32}(m)
+  c = Vector{Float32}(undef,m)
+  d = Vector{Float32}(undef,m)
   @inbounds @fastmath begin
     w0 = w[1]
     d1 = d[1] = w0 + lambda
